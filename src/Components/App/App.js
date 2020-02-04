@@ -6,7 +6,7 @@ const App = () => {
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/dogs/')
+    fetch(process.env.REACT_APP_BACKEND_URL + 'api/v1/dogs/')
       .then(response => response.json())
       .then(dogs => { setDogs(dogs) })
       .catch(err => console.log(err))
