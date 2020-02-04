@@ -1,5 +1,6 @@
 import React from 'react';
 import DogCard from '../DogCard/DogCard.js';
+import './DogContainer.css';
 
 const DogContainer = ({ dogs }) => {
   const dogCards = dogs.map(dog => {
@@ -8,7 +9,6 @@ const DogContainer = ({ dogs }) => {
     )
   });
   const display = dogCards.length? dogCards : 'There are no dogs!!!!!!!';
-  console.log(display);
   return (
     <section className="dog-card-container">
       {display}

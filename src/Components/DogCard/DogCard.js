@@ -1,4 +1,5 @@
 import React from 'react';
+import './DogCard.css';
 
 const DogCard = ({ breed, age, name }) => {
   return (

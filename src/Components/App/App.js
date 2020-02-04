@@ -6,7 +6,7 @@ const App = () => {
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
-    fetch('localhost:3000/api/v1/pets/')
+    fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/dogs/')
       .then(response => response.json())
       .then(dogs => { setDogs(dogs) })
       .catch(err => console.log(err))
@@ -16,6 +16,7 @@ const App = () => {
       <header className="main-header">
         <h1>Dogs! Dogs! Dogs!</h1>
       </header>
+      <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
       <DogContainer dogs={dogs} />
     </main>
   );
