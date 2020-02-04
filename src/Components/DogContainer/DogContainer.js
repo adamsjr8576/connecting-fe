@@ -4,13 +4,15 @@ import DogCard from '../DogCard/DogCard.js';
 const DogContainer = ({ dogs }) => {
   const dogCards = dogs.map(dog => {
     return (
-      <section className="dog-card-container">
         <DogCard breed={dog.breed} age={dog.age} name={dog.name} />
-      </section>
     )
-  })
+  });
+  const display = dogCards.length? dogCards : 'There are no dogs!!!!!!!';
+  console.log(display);
   return (
-
+    <section className="dog-card-container">
+      {display}
+    </section>
   )
 }
 

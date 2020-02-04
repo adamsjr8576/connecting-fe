@@ -9,12 +9,15 @@ const App = () => {
     fetch('localhost:3000/api/v1/pets/')
       .then(response => response.json())
       .then(dogs => { setDogs(dogs) })
+      .catch(err => console.log(err))
   }, []);
-
   return (
-    <div className="App">
+    <main className="App">
+      <header className="main-header">
+        <h1>Dogs! Dogs! Dogs!</h1>
+      </header>
       <DogContainer dogs={dogs} />
-    </div>
+    </main>
   );
 }
 
